@@ -1,0 +1,108 @@
+:root {
+  --primary-: #00203F;
+  --secondary-: #ADEFD1;
+}
+
+.container {
+  margin: auto;
+  width: 62rem;
+  padding: 0 10px;
+  background: var(--primary-);
+}
+
+.navbar ul li {
+  float: left;
+  width: 30.750rem;
+  padding: 15px 0;
+  font-size: 18px;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border: 2px solid var(--secondary-);
+  background: var(--primary-);
+  transition: all 0.2s ease;
+}
+
+.navbar ul li.active {
+  background: var(--secondary-);
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--secondary-);
+}
+
+.navbar ul li.active a {
+  color: var(--primary-);
+}
+
+
+.user-list {
+  background: var(--secondary-);
+}
+
+.user-list li {
+  display: block;
+  float: left;
+  margin: 15px;
+}
+
+.card-component {
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--secondary-);
+  background: var(--primary-);
+  cursor: pointer;
+}
+
+.card-img {
+  float: left;
+  width: 38%;
+  margin-right: 2%;
+}
+
+.card-text {
+  float: right;
+  width: 60%;
+}
+
+.card {
+  width: 100%;
+}
+
+.card-img img {
+  width: 100%;
+}
+
+.card, .card-text {
+  word-break: break-all;
+}
+
+.user-profile {
+  background: var(--secondary-);
+}
+
+.profile-image {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.profile-image img {
+  width: 300px;
+  height: 400px;
+  border-radius: 50%;
+}
+
+.profile-detail {
+  text-align: center;
+  padding: 20px;
+}
+
+.tag {
+  font-size: 18px;
+  padding-top: 10px;
+}
+
+.tag .fa {
+  margin-right: 10px;
+}
