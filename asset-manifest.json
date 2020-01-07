@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/react/users/static/css/main.57a1a5a2.chunk.css",
+    "main.js": "/react/users/static/js/main.ae404c90.chunk.js",
+    "main.js.map": "/react/users/static/js/main.ae404c90.chunk.js.map",
+    "runtime-main.js": "/react/users/static/js/runtime-main.81a5fd24.js",
+    "runtime-main.js.map": "/react/users/static/js/runtime-main.81a5fd24.js.map",
+    "static/css/2.6a220811.chunk.css": "/react/users/static/css/2.6a220811.chunk.css",
+    "static/js/2.2fd4bd41.chunk.js": "/react/users/static/js/2.2fd4bd41.chunk.js",
+    "static/js/2.2fd4bd41.chunk.js.map": "/react/users/static/js/2.2fd4bd41.chunk.js.map",
+    "index.html": "/react/users/index.html",
+    "precache-manifest.8fe641e63e33a38c8393cdfecb9631f1.js": "/react/users/precache-manifest.8fe641e63e33a38c8393cdfecb9631f1.js",
+    "service-worker.js": "/react/users/service-worker.js",
+    "static/css/2.6a220811.chunk.css.map": "/react/users/static/css/2.6a220811.chunk.css.map",
+    "static/css/main.57a1a5a2.chunk.css.map": "/react/users/static/css/main.57a1a5a2.chunk.css.map",
+    "static/js/2.2fd4bd41.chunk.js.LICENSE": "/react/users/static/js/2.2fd4bd41.chunk.js.LICENSE",
+    "static/media/font-awesome.css": "/react/users/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.81a5fd24.js",
+    "static/css/2.6a220811.chunk.css",
+    "static/js/2.2fd4bd41.chunk.js",
+    "static/css/main.57a1a5a2.chunk.css",
+    "static/js/main.ae404c90.chunk.js"
+  ]
+}
