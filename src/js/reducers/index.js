@@ -2,6 +2,7 @@ import {LOGGED_STATUS, ACTIVE_NAV, USER_LIST, USER_PROFILE} from "../constants/a
 import testapi from '../../test.json';
 
 const USER_ID = 1;
+// console.log(window.location.pathname.replace('/'));
 const initialState = {
   loggedStatus: true,
   activeNav: 'home',

@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {
   BrowserRouter as Router,
-  Link
+  Link,
+  Switch,
+  Route
 } from 'react-router-dom';
 import Home from './components/home';
 import Login from './components/login';
@@ -20,24 +22,22 @@ function mapDispatchToProps(dispatch) {
 }
 
 class ConnectedApp extends Component {
-
-  getRoutePath() {
-    switch (this.props.activeNav) {
-      case "my-profile":
-        return <EnhancedMyProfile {...this.props}/>;
-      case "profile":
-        return <EnhancedProfile {...this.props}/>;
-      default:
-        return <EnhancedHome {...this.props}/>;
-    }
-  }
-
   render() {
     return (
       <div className='container'>
         <Router basename="/userprofiles-react">
           <div>
-            {this.getRoutePath()}
+            <Switch>
+              <Route path="/my-profile">
+                <EnhancedMyProfile {...this.props}/>;
+              </Route>
+              <Route path="/profile">
+                <EnhancedProfile {...this.props}/>;
+              </Route>
+              <Route path="/">
+                <EnhancedHome {...this.props}/>;
+              </Route>
+            </Switch>
           </div>
         </Router>
       </div>
