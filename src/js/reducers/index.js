@@ -6,9 +6,24 @@ const USER_ID = 1;
 const initialState = {
   loggedStatus: true,
   activeNav: 'home',
-  users: testapi,
+  users: [],
   profileId: USER_ID,
-  profile: {}
+  profile:   {
+    "id": 1,
+    "email": "jaydon_gislason59@yahoo.com",
+    "phone": "(998) 970-2799",
+    "address": {
+      "city": "South Nyah",
+      "state": "New York",
+      "country": "Equatorial Guinea",
+      "zipCode": "16308-9260",
+      "countryCode": "AX",
+      "streetAddress": "3585 Lucinda Valleys"
+    },
+    "lastName": "Von",
+    "firstName": "Walter",
+    "profileImage": "https://s3.amazonaws.com/uifaces/faces/twitter/jeremyworboys/128.jpg"
+  }
 };
 
 function rootReducer(state = initialState, action) {

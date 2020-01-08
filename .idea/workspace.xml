@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c6d726df-d6a5-41d0-b52c-457220922787" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/reducers/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +20,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../NODEJS/test-nodejs-express" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
@@ -66,7 +66,8 @@
       <option name="presentableId" value="Default" />
       <updated>1578405885969</updated>
       <workItem from="1578405887066" duration="17271000" />
-      <workItem from="1578455758362" duration="16856000" />
+      <workItem from="1578455758362" duration="17466000" />
+      <workItem from="1578493378195" duration="242000" />
     </task>
     <servers />
   </component>
