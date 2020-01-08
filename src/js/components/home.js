@@ -31,20 +31,33 @@ class ConnectedHome extends Component {
       <div className='user-list'>
         <ul className='clearfix'>
           {this.props.users.map(item => (
-            <Card
-              key={item.id}
-              id={item.id}
-              width={300}
-              background={(item.id % 4 === 0) ? '#F2AA4C' : undefined}
-              color={(item.id % 4 === 0) ? '#101820' : undefined}
-              image={item.profileImage}
-              title={item.firstName + item.lastName}
-              detail={item.phone}
-              subDetail={item.email}
-              onClick={this.props.getUserProfile}
-            />))}
+            <EnhancedCard key={item.id} {...this.props} item={item}/>
+          ))}
         </ul>
       </div>
+    );
+  }
+}
+
+const EnhancedCard = withRouter(Card);
+
+function withRouter(Card) {
+  return function (props) {
+    return (
+      <Link to={'/profile?id=' + props.item.id}>
+        <Card
+          key={props.item.id}
+          id={props.item.id}
+          width={300}
+          background={(props.item.id % 4 === 0) ? '#F2AA4C' : undefined}
+          color={(props.item.id % 4 === 0) ? '#101820' : undefined}
+          image={props.item.profileImage}
+          title={props.item.firstName + props.item.lastName}
+          detail={props.item.phone}
+          subDetail={props.item.email}
+          onClick={props.getUserProfile}
+        />
+      </Link>
     );
   }
 }

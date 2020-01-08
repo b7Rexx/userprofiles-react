@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6d726df-d6a5-41d0-b52c-457220922787" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/media.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/media.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/card.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/components/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/reducers/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1578405885969</updated>
       <workItem from="1578405887066" duration="17271000" />
-      <workItem from="1578455758362" duration="10931000" />
+      <workItem from="1578455758362" duration="11328000" />
     </task>
     <servers />
   </component>
