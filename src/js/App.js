@@ -29,13 +29,13 @@ class ConnectedApp extends Component {
           <div>
             <Switch>
               <Route path="/my-profile">
-                <EnhancedMyProfile {...this.props}/>;
+                <EnhancedMyProfile {...this.props}/>
               </Route>
               <Route path="/profile">
-                <EnhancedProfile {...this.props}/>;
+                <EnhancedProfile {...this.props}/>
               </Route>
               <Route path="/">
-                <EnhancedHome {...this.props}/>;
+                <EnhancedHome {...this.props}/>
               </Route>
             </Switch>
           </div>
@@ -113,7 +113,6 @@ function withBack(Component) {
       </div>
     );
   }
-
 }
 
 const App = connect(mapStateToProps, mapDispatchToProps)(ConnectedApp);

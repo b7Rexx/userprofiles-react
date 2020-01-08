@@ -13,6 +13,8 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from "react-redux";
 import store from "./js/store";
 
+if (window.location.pathname !== '/userprofiles-react')
+  window.location.replace(window.location.origin + '/userprofiles-react');
 
 ReactDOM.render(
   <Provider store={store}>
