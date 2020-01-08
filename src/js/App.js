@@ -23,29 +23,20 @@ class ConnectedApp extends Component {
 
   getRoutePath() {
     switch (this.props.activeNav) {
-      case "home":
-        return <EnhancedHome loggedStatus={this.props.loggedStatus}/>;
+      case "my-profile":
+        return <EnhancedMyProfile {...this.props}/>;
+      case "profile":
+        return <EnhancedProfile {...this.props}/>;
       default:
-        return <EnhancedUser loggedStatus={this.props.loggedStatus}/>;
+        return <EnhancedHome {...this.props}/>;
     }
   }
 
   render() {
     return (
       <div className='container'>
-        <Router>
+        <Router basename="/userprofiles-react">
           <div>
-            <nav className='navbar clearfix'>
-              <ul>
-                <li className={(this.props.activeNav === 'home') ? 'active' : ''}>
-                  <Link to='/' onClick={() => this.props.changeNavEvent('home')}>Home</Link>
-                </li>
-                <li className={(this.props.activeNav === 'profile') ? 'active' : ''}>
-                  <Link to='/profile' onClick={() => this.props.changeNavEvent('profile')}>My Profile</Link>
-                </li>
-              </ul>
-            </nav>
-
             {this.getRoutePath()}
           </div>
         </Router>
@@ -54,8 +45,9 @@ class ConnectedApp extends Component {
   }
 }
 
-const EnhancedHome = withAuth(Home);
-const EnhancedUser = withAuth(Profile);
+const EnhancedHome = withAuth(withHeader(Home));
+const EnhancedProfile = withAuth(withBack(Profile));
+const EnhancedMyProfile = withAuth(withHeader(Profile));
 
 /**
  * Auth check
@@ -65,10 +57,63 @@ const EnhancedUser = withAuth(Profile);
 function withAuth(Component) {
   return function (props) {
     if (props.loggedStatus)
-      return <Component/>;
+      return <Component {...props}/>;
     else
       return <Login/>;
   }
+}
+
+/**
+ * with navigation header
+ * @param Component
+ * @returns {function(*): *}
+ */
+function withHeader(Component) {
+  return function (props) {
+    return (
+      <div>
+        <div className='header'>
+          <nav className='navbar clearfix'>
+            <ul>
+              <li className={(props.activeNav === 'home') ? 'active' : ''}>
+                <Link to='/' onClick={() => props.changeNavEvent('home')}>People</Link>
+              </li>
+              <li className={(props.activeNav === 'my-profile') ? 'active' : ''}>
+                <Link to='/my-profile' onClick={() => props.changeNavEvent('my-profile')}>My Profile</Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div className='content'>
+          <Component {...props}/>
+        </div>
+      </div>
+    );
+  }
+}
+
+/**
+ * with back button removing header
+ * @param Component
+ * @returns {function(*): *}
+ */
+function withBack(Component) {
+  return function (props) {
+    return (
+      <div>
+        <div className='header'>
+          <div className='profile-nav'>
+            <Link to='/' onClick={() => props.changeNavEvent('home')}><i className='fa fa-arrow-circle-o-left'/></Link>
+            People
+          </div>
+        </div>
+        <div className='content'>
+          <Component {...props}/>
+        </div>
+      </div>
+    );
+  }
+
 }
 
 const App = connect(mapStateToProps, mapDispatchToProps)(ConnectedApp);

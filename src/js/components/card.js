@@ -15,6 +15,7 @@ class Card extends Component {
         <div className='card-text' style={this.getColor()}>
           <strong>{this.props.title}</strong>
           <p>{this.props.detail}</p>
+          <p>{this.props.subDetail}</p>
         </div>
       </div>
     );
@@ -26,6 +27,7 @@ class Card extends Component {
         <div className='card' style={this.getColor()}>
           <strong>{this.props.title}</strong>
           <p>{this.props.detail}</p>
+          <p>{this.props.subDetail}</p>
         </div>
       </div>
     );
@@ -33,7 +35,7 @@ class Card extends Component {
 
   render() {
     return (
-      <li style={{width: this.props.width}} onClick={this.props.onClick}>
+      <li style={{width: this.props.width}} onClick={()=>this.props.onClick(this.props.id,this.props.color,this.props.background)}>
         {this.props.image ? this.havingImage() : this.noImage()}
       </li>
     );

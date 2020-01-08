@@ -1,25 +1,37 @@
 :root {
-  --primary-: #00203F;
-  --secondary-: #ADEFD1;
+  --primary-: #89ABE3;
+  --secondary-: #FCF6F5;
 }
 
 .container {
   margin: auto;
   width: 62rem;
-  padding: 0 10px;
+  padding: 0 10px 10px;
   background: var(--primary-);
+}
+
+.header {
+  position: fixed;
+  width: 62rem;
+  background: var(--secondary-);
+}
+
+.content {
+  padding-top: 56px;
+  border: 2px solid var(--secondary-);
 }
 
 .navbar ul li {
   float: left;
-  width: 30.750rem;
-  padding: 15px 0;
+  width: 50%;
   font-size: 18px;
   text-align: center;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  border: 2px solid var(--secondary-);
+  box-shadow: 0 -1px 2px var(--primary-);
   background: var(--primary-);
+  margin-top: 5px;
+  margin-bottom: 5px;
   transition: all 0.2s ease;
 }
 
@@ -28,6 +40,8 @@
 }
 
 .navbar ul li a {
+  display: block;
+  padding: 15px 0;
   text-decoration: none;
   color: var(--secondary-);
 }
@@ -36,6 +50,25 @@
   color: var(--primary-);
 }
 
+.profile-nav {
+  padding: 15px 0;
+  font-size: 18px;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border: 2px solid var(--secondary-);
+  border-bottom: 0;
+  background: var(--primary-);
+  transition: all 0.2s ease;
+  color: var(--secondary-);
+}
+
+.profile-nav a {
+  float: left;
+  margin: 0 10px;
+  font-size: 20px;
+  color: var(--secondary-);
+}
 
 .user-list {
   background: var(--secondary-);
@@ -44,7 +77,7 @@
 .user-list li {
   display: block;
   float: left;
-  margin: 15px;
+  margin: 10px;
 }
 
 .card-component {
@@ -53,6 +86,10 @@
   color: var(--secondary-);
   background: var(--primary-);
   cursor: pointer;
+}
+
+.card-component:hover {
+  box-shadow: 2px 2px 5px var(--primary-)
 }
 
 .card-img {
@@ -72,6 +109,7 @@
 
 .card-img img {
   width: 100%;
+  border-radius: 50%;
 }
 
 .card, .card-text {
@@ -85,17 +123,21 @@
 .profile-image {
   padding-top: 10px;
   text-align: center;
+  background: linear-gradient(to bottom, var(--secondary-), var(--primary-));
 }
 
 .profile-image img {
   width: 300px;
-  height: 400px;
+  height: 300px;
+  border: 5px solid var(--primary-);
   border-radius: 50%;
 }
 
 .profile-detail {
   text-align: center;
   padding: 20px;
+  color: var(--secondary-);
+  background: var(--primary-);
 }
 
 .tag {
@@ -105,4 +147,20 @@
 
 .tag .fa {
   margin-right: 10px;
+}
+
+.profile-address table {
+  text-align: left;
+  width: 80%;
+  margin: 10px auto auto;
+  font-size: 18px;
+}
+
+.profile-address table tr td:first-child {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.profile-address table tr td {
+  padding: 5px;
 }

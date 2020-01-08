@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {userList, userProfile} from "../actions";
 import Card from "./card";
+import {Link} from "react-router-dom";
 
 const mapStateToProps = state => {
   return {users: state.users};
@@ -14,7 +15,9 @@ function mapDispatchToProps(dispatch) {
         .then(res => res.json())
         .then(data => dispatch(userList(data)))
     ),
-    getUserProfile: itemId => dispatch(userProfile(itemId))
+    getUserProfile: (profileId, color, bgColor) => {
+      dispatch(userProfile({profileId: profileId, color: color, bgColor: bgColor}))
+    }
   };
 }
 
@@ -32,12 +35,13 @@ class ConnectedHome extends Component {
               key={item.id}
               id={item.id}
               width={300}
-              background={(item.id % 5 === 0) ? 'green' : undefined}
-              color={(item.id % 2 === 0) ? 'blue' : undefined}
+              background={(item.id % 4 === 0) ? '#F2AA4C' : undefined}
+              color={(item.id % 4 === 0) ? '#101820' : undefined}
               image={item.profileImage}
               title={item.firstName + item.lastName}
-              detail={item.email}
-              onClick={() => this.props.getUserProfile(item.id)}
+              detail={item.phone}
+              subDetail={item.email}
+              onClick={this.props.getUserProfile}
             />))}
         </ul>
       </div>

@@ -25,10 +25,12 @@ function rootReducer(state = initialState, action) {
       });
     case USER_PROFILE:
       return Object.assign({}, state, {
-        activeNav: 'my-profile',
-        profileId: action.payload,
+        activeNav: 'profile',
+        profileId: action.payload.profileId,
+        color: action.payload.color || undefined,
+        bgColor: action.payload.bgColor || undefined,
         profile: state.users.find(function (item) {
-          return item.id === action.payload;
+          return item.id === action.payload.profileId;
         })
       });
     default:
