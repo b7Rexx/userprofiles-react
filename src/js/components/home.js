@@ -45,7 +45,7 @@ const EnhancedCard = withRouter(Card);
 function withRouter(Card) {
   return function (props) {
     return (
-      <Link to={'/profile?id=' + props.item.id}>
+      <Link to={'/profile/' + props.item.id}>
         <Card
           key={props.item.id}
           id={props.item.id}

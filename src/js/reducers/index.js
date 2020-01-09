@@ -1,4 +1,5 @@
 import {LOGGED_STATUS, ACTIVE_NAV, USER_LIST, USER_PROFILE, MY_PROFILE} from "../constants/action-types";
+import testapi from '../../test';
 
 const USER_ID = 1;
 
@@ -7,24 +8,11 @@ const initialState = {
   activeNav: 'home',
   users: [],
   profileId: USER_ID,
-  profile: {
-    "id": 1,
-    "email": "jaydon_gislason59@yahoo.com",
-    "phone": "(998) 970-2799",
-    "address": {
-      "city": "South Nyah",
-      "state": "New York",
-      "country": "Equatorial Guinea",
-      "zipCode": "16308-9260",
-      "countryCode": "AX",
-      "streetAddress": "3585 Lucinda Valleys"
-    },
-    "lastName": "Von",
-    "firstName": "Walter",
-    "profileImage": "https://s3.amazonaws.com/uifaces/faces/twitter/jeremyworboys/128.jpg"
-  }
+  profile: undefined
 };
-
+if (initialState.users.length===0) {
+  initialState.users = testapi;
+}
 function rootReducer(state = initialState, action) {
   switch (action.type) {
     case USER_LIST:
@@ -52,7 +40,7 @@ function rootReducer(state = initialState, action) {
         color: action.payload.color || undefined,
         bgColor: action.payload.bgColor || undefined,
         profile: state.users.find(function (item) {
-          return item.id === action.payload.profileId;
+          return item.id == action.payload.profileId;
         })
       });
     default:

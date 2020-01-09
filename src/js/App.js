@@ -9,7 +9,7 @@ import Home from './components/home';
 import Login from './components/login';
 import Profile from "./components/profile";
 import {connect} from "react-redux";
-import {setMyProfile, userList} from "./actions";
+import {setMyProfile, userList, userProfile} from "./actions";
 
 const mapStateToProps = state => {
   return state;
@@ -22,7 +22,8 @@ function mapDispatchToProps(dispatch) {
         .then(res => res.json())
         .then(data => dispatch(userList(data)))
     ),
-    setMyProfile: () => (dispatch(setMyProfile('my-profile')))
+    setMyProfile: () => (dispatch(setMyProfile('my-profile'))),
+    userProfile: (data) => (dispatch(userProfile(data)))
   };
 }
 
@@ -40,8 +41,8 @@ class ConnectedApp extends Component {
               <Route path="/my-profile"
                      component={(routerProps) => <EnhancedMyProfile {...routerProps} {...this.props}
                                                                     myprofile={true}/>}/>
-              <Route path="/profile" component={(routerProps) => <EnhancedProfile {...routerProps} {...this.props}
-                                                                                  myprofile={false}/>}/>
+              <Route path="/profile/:id" component={(routerProps) => <EnhancedProfile {...routerProps} {...this.props}
+                                                                                      myprofile={false}/>}/>
               <Route path='/' component={(routerProps) => <EnhancedHome {...routerProps} {...this.props}/>}/>
             </Switch>
           </div>
@@ -64,6 +65,11 @@ function withAuth(Component) {
   return function (props) {
     if (props.myprofile) {
       props.setMyProfile();
+    }else{
+      if (!props.profile){
+       props.userProfile({profileId:props.match.params.id})
+      }
+      console.log(props);
     }
     if (props.loggedStatus)
       return <Component {...props}/>;
