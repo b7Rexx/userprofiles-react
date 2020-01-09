@@ -7,7 +7,6 @@ const mapStateToProps = state => {
 };
 
 class ConnectedProfile extends Component {
-
   getAddress() {
     const addressRows = Object.keys(this.props.profile.address).map((item, index) => {
       return (
@@ -40,9 +39,13 @@ class ConnectedProfile extends Component {
   render() {
     return (
       <div className='user-profile'>
-        <div className='profile-image'
-             style={{background: 'linear-gradient(to bottom,' + this.props.color + ',' + this.props.bgColor + ')'}}>
-          <img src={this.props.profile.profileImage} alt="image"/>
+        <div className='profile-top'>
+          <div className='bg-profile-image'>
+            <img src={this.props.profile.profileImage} alt="image"/>
+          </div>
+          <div className='profile-image' style={{background: 'linear-gradient(to bottom,transparent,' + this.props.bgColor + ')'}}>
+            <img src={this.props.profile.profileImage} alt="image"/>
+          </div>
         </div>
         <div className='profile-detail' style={{color: this.props.color, background: this.props.bgColor}}>
           <h1>{this.props.profile.firstName} {this.props.profile.lastName}</h1>

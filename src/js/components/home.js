@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {userList, userProfile} from "../actions";
-import Card from "./card";
+import {userProfile} from "../actions";
 import {Link} from "react-router-dom";
+import Card from "./card";
+import Loading from "./loading";
 
 const mapStateToProps = state => {
   return {users: state.users};
@@ -10,11 +11,6 @@ const mapStateToProps = state => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    userList: () => (
-      fetch('https://mock-io.herokuapp.com/users')
-        .then(res => res.json())
-        .then(data => dispatch(userList(data)))
-    ),
     getUserProfile: (profileId, color, bgColor) => {
       dispatch(userProfile({profileId: profileId, color: color, bgColor: bgColor}))
     }
@@ -22,17 +18,22 @@ function mapDispatchToProps(dispatch) {
 }
 
 class ConnectedHome extends Component {
-  componentDidMount() {
-    this.props.userList();
+
+  getUserList() {
+    if (this.props.users.length !== 0) {
+      return this.props.users.map(item => (
+        <EnhancedCard key={item.id} {...this.props} item={item}/>
+      ))
+    } else {
+      return <Loading/>
+    }
   }
 
   render() {
     return (
       <div className='user-list'>
         <ul className='clearfix'>
-          {this.props.users.map(item => (
-            <EnhancedCard key={item.id} {...this.props} item={item}/>
-          ))}
+          {this.getUserList()}
         </ul>
       </div>
     );

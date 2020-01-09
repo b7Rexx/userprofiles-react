@@ -28,7 +28,8 @@
   }
 
   .profile-image img {
-    width: 200px;
-    height: 200px;
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
   }
 }

@@ -1,4 +1,4 @@
-import {LOGGED_STATUS, ACTIVE_NAV, USER_LIST, USER_PROFILE} from "../constants/action-types";
+import {LOGGED_STATUS, ACTIVE_NAV, USER_LIST, USER_PROFILE,MY_PROFILE} from "../constants/action-types";
 
 export function userList(payload) {
   return {type: USER_LIST, payload};
@@ -14,4 +14,8 @@ export function loggedStatus(payload) {
 
 export function userProfile(payload) {
   return {type: USER_PROFILE, payload};
+}
+
+export function setMyProfile(payload) {
+  return {type: MY_PROFILE, payload};
 }

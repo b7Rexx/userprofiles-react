@@ -9,7 +9,7 @@ import Home from './components/home';
 import Login from './components/login';
 import Profile from "./components/profile";
 import {connect} from "react-redux";
-import {activeNav} from "./actions";
+import {setMyProfile, userList} from "./actions";
 
 const mapStateToProps = state => {
   return state;
@@ -17,26 +17,32 @@ const mapStateToProps = state => {
 
 function mapDispatchToProps(dispatch) {
   return {
-    changeNavEvent: (nav) => dispatch(activeNav(nav))
+    userList: () => (
+      fetch('https://mock-io.herokuapp.com/users')
+        .then(res => res.json())
+        .then(data => dispatch(userList(data)))
+    ),
+    setMyProfile: () => (dispatch(setMyProfile('my-profile')))
   };
 }
 
 class ConnectedApp extends Component {
+  componentDidMount() {
+    this.props.userList();
+  }
+
   render() {
     return (
       <div className='container'>
         <Router basename="/userprofiles-react">
           <div>
             <Switch>
-              <Route path="/my-profile">
-                <EnhancedMyProfile {...this.props}/>
-              </Route>
-              <Route path="/profile">
-                <EnhancedProfile {...this.props}/>
-              </Route>
-              <Route path="/">
-                <EnhancedHome {...this.props}/>
-              </Route>
+              <Route path="/my-profile"
+                     component={(routerProps) => <EnhancedMyProfile {...routerProps} {...this.props}
+                                                                    myprofile={true}/>}/>
+              <Route path="/profile" component={(routerProps) => <EnhancedProfile {...routerProps} {...this.props}
+                                                                                  myprofile={false}/>}/>
+              <Route path='/' component={(routerProps) => <EnhancedHome {...routerProps} {...this.props}/>}/>
             </Switch>
           </div>
         </Router>
@@ -56,6 +62,9 @@ const EnhancedMyProfile = withAuth(withHeader(Profile));
  */
 function withAuth(Component) {
   return function (props) {
+    if (props.myprofile) {
+      props.setMyProfile();
+    }
     if (props.loggedStatus)
       return <Component {...props}/>;
     else
@@ -75,11 +84,12 @@ function withHeader(Component) {
         <div className='header'>
           <nav className='navbar clearfix'>
             <ul>
-              <li className={(props.activeNav === 'home') ? 'active' : ''}>
-                <Link to='/' onClick={() => props.changeNavEvent('home')}>People</Link>
+              <li className={(props.location.pathname === '/') ? 'active' : ''}>
+                <Link to='/'>People</Link>
               </li>
-              <li className={(props.activeNav === 'my-profile') ? 'active' : ''}>
-                <Link to='/my-profile' onClick={() => props.changeNavEvent('my-profile')}>My Profile</Link>
+              <li className={(props.location.pathname === '/my-profile') ? 'active' : ''}>
+                <Link to='/my-profile'>My
+                  Profile</Link>
               </li>
             </ul>
           </nav>
@@ -103,7 +113,8 @@ function withBack(Component) {
       <div>
         <div className='header'>
           <div className='profile-nav'>
-            <Link to='/' onClick={() => props.changeNavEvent('home')}><i className='fa fa-arrow-circle-o-left'/></Link>
+            <Link to='/'><i
+              className='fa fa-arrow-circle-o-left'/></Link>
             People
           </div>
         </div>
