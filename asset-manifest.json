@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/userprofiles-react/static/css/main.7c5f07a7.chunk.css",
-    "main.js": "/userprofiles-react/static/js/main.419372eb.chunk.js",
-    "main.js.map": "/userprofiles-react/static/js/main.419372eb.chunk.js.map",
+    "main.css": "/userprofiles-react/static/css/main.6b0b4aaf.chunk.css",
+    "main.js": "/userprofiles-react/static/js/main.4b9eeb6d.chunk.js",
+    "main.js.map": "/userprofiles-react/static/js/main.4b9eeb6d.chunk.js.map",
     "runtime-main.js": "/userprofiles-react/static/js/runtime-main.9350cc17.js",
     "runtime-main.js.map": "/userprofiles-react/static/js/runtime-main.9350cc17.js.map",
     "static/css/2.d90a738e.chunk.css": "/userprofiles-react/static/css/2.d90a738e.chunk.css",
-    "static/js/2.072c28f0.chunk.js": "/userprofiles-react/static/js/2.072c28f0.chunk.js",
-    "static/js/2.072c28f0.chunk.js.map": "/userprofiles-react/static/js/2.072c28f0.chunk.js.map",
+    "static/js/2.3f207658.chunk.js": "/userprofiles-react/static/js/2.3f207658.chunk.js",
+    "static/js/2.3f207658.chunk.js.map": "/userprofiles-react/static/js/2.3f207658.chunk.js.map",
     "index.html": "/userprofiles-react/index.html",
-    "precache-manifest.96519c4536c75408ba62633c844bd34a.js": "/userprofiles-react/precache-manifest.96519c4536c75408ba62633c844bd34a.js",
+    "precache-manifest.3f8029c4e19374f923a8ce717abbf09d.js": "/userprofiles-react/precache-manifest.3f8029c4e19374f923a8ce717abbf09d.js",
     "service-worker.js": "/userprofiles-react/service-worker.js",
     "static/css/2.d90a738e.chunk.css.map": "/userprofiles-react/static/css/2.d90a738e.chunk.css.map",
-    "static/css/main.7c5f07a7.chunk.css.map": "/userprofiles-react/static/css/main.7c5f07a7.chunk.css.map",
-    "static/js/2.072c28f0.chunk.js.LICENSE": "/userprofiles-react/static/js/2.072c28f0.chunk.js.LICENSE",
+    "static/css/main.6b0b4aaf.chunk.css.map": "/userprofiles-react/static/css/main.6b0b4aaf.chunk.css.map",
+    "static/js/2.3f207658.chunk.js.LICENSE": "/userprofiles-react/static/js/2.3f207658.chunk.js.LICENSE",
     "static/media/font-awesome.css": "/userprofiles-react/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.9350cc17.js",
     "static/css/2.d90a738e.chunk.css",
-    "static/js/2.072c28f0.chunk.js",
-    "static/css/main.7c5f07a7.chunk.css",
-    "static/js/main.419372eb.chunk.js"
+    "static/js/2.3f207658.chunk.js",
+    "static/css/main.6b0b4aaf.chunk.css",
+    "static/js/main.4b9eeb6d.chunk.js"
   ]
 }
